@@ -36,12 +36,6 @@ colorInput.forEach(item=>{
     })
 })
 
-taskElement.forEach(item=>{
-    item.lastElementChild.addEventListener('click',()=>{
-        item.remove()
-    })
-})
-
 //------- FUNCTIONS :
 
 const newTask=()=>{
@@ -53,25 +47,8 @@ const newTask=()=>{
 
     if(title&&place&&time&&desc&&importance){
         tasks.push(new Task(title,time,date,place,desc,importance))
-        build(tasks[tasks.length-1])
-        resetForm()
-        
-        const task=container.lastElementChild
-        task.lastElementChild.addEventListener('click',()=>{
-            task.remove()
-        })
-        
+        resetForm()      
     }
-}
-
-const build=(task)=>{
-    const div=document.createElement('div')
-    div.classList.add('task')
-    div.classList.add('row')
-    div.classList.add(task.importance)
-    div.innerHTML=task.getHTML()
-
-    container.append(div)
 }
 
 const displayForm=()=>{
