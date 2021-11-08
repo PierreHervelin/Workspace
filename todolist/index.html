@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="task.js" defer></script>
+    <script src="app.js" defer></script>
+
+    <title>To do list</title>
+</head>
+<body>
+    <main>
+        <button class="new" onclick="displayForm()">+</button>
+
+        <div class="col form">
+            <div class="close" onclick="undisplayForm()">+</div>
+            <div class="input">
+                <input type="text" placeholder="Titre" id="title">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Lieu" id="place">
+            </div>
+            <div class="input">
+                <input type="date" placeholder="Date" id="date">
+            </div>
+            <div class="input">
+                <input type="time" placeholder="Heure" id="time">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Description" id="desc">
+            </div>
+            <div class="row color-choice">
+                <div class="color" id="white"></div>
+                <div class="color" id="orange"></div>
+                <div class="color" id="red"></div>
+            </div>
+            <button onclick="newTask()">Valider</button>
+        </div>
+
+        <div class="col task-container">
+
+        </div>
+        <div class="col complete-task">
+
+        </div>
+    </main>
+</body>
+</html>

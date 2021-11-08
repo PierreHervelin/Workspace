@@ -1,0 +1,271 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #222;
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.new{
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+
+    background-color: white;
+    color: black;
+
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .8);
+    transform: rotate(0deg);
+
+    transition: all ease .5s;
+}
+.new:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+.form{
+    width: 20%;
+    height: fit-content;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+
+    opacity: 0;
+    pointer-events: none;
+
+    z-index: 2;
+
+    transition: opacity ease .2s;
+}
+
+.form.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.form::after{
+    content: '';
+    background: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(3px);
+
+    pointer-events: none;
+
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+}
+
+.form>.input>input{
+    background: transparent;
+    color: white;
+    outline: none;
+    border: none;
+
+    border-bottom: 2px solid #777;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-size: 18px;
+
+    width: 100%;
+    height: 100%;
+
+    transition: all ease .5s;
+}
+.form>.input>input#title{
+    font-size: 25px;
+}
+.form>.input>input:focus-visible{
+    border-bottom: 2px solid white;
+}
+.form>.input{
+    margin-block: 4vh;
+    position: relative;
+    width: 100%;
+    height: 25px;
+}
+.form>.input::after{
+    content: '';
+
+    background-color: white;
+    width: 100%;
+    height: 2px;
+
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+
+    opacity: 1;
+
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform ease .5s;
+}
+.form>.input:hover::after{
+    transform: scale(1);
+    transform-origin: bottom left;
+}
+.form>button{
+    margin-block: 20px;
+
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    background: white;
+
+    transition: all ease .2s;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    transform: rotate(45deg);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.form>button:hover{
+    background: black;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.color-choice .color{
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: transform ease .2s;
+}
+.color-choice .color#white{
+    background: white;
+}
+.color-choice .color#orange{
+    background: orange;
+}
+.color-choice .color#red{
+    background: red;
+}
+.color-choice .color:hover{
+    transform: scale(1.1);
+}
+.color-choice .color.active{
+    transform: scale(1.2);
+}
+
+.task-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    justify-content: center;
+    align-items: center;
+
+    width: 25%;
+    height: fit-content;
+    max-height: 80%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+}
+
+::-webkit-scrollbar{
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: transparent;
+}
+
+::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+.task{
+    width: 90%;
+    justify-content: space-around;
+    align-items: baseline;
+    border-radius: 5px;
+    background: white;
+    color: black;
+    padding: 10px;
+    margin-block: 10px;
+    z-index: 1;
+}
+.task>p{
+    font-size: 18px;
+}
+.task.white{
+    border: 2px solid white;
+}
+.task.orange{
+    border: 2px solid orange;
+}
+.task.red{
+    border: 2px solid red;
+}
+
+.task>input{
+    pointer-events: auto;
+}
+.task>button{
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+
+    transform: rotate(45deg);
+    transition: all ease .2s;
+}
+.task>button:hover{
+    color: #777;
+}
+
