@@ -1,0 +1,74 @@
+.Task{
+    @extend %row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    width: 550px;
+    height: 70px;
+    padding: 20px;
+
+    border-radius: 10px;
+    background: white;
+
+    margin-block: 10px;
+
+    position: relative;
+
+    transition: all ease .2s;
+
+    &[data-color="white"]{
+        border: 2px solid white;
+    }
+    &[data-color="orange"]{
+        border: 2px solid orange;
+    }
+    &[data-color="red"]{
+        border: 2px solid orangered;
+    }
+
+    &:hover{
+        transform: scale(1.1);
+    }
+
+    &>div{
+        @extend %col;
+        justify-content: center;
+        align-items: flex-start;
+
+        width: 20%;
+        height: 100%;
+
+        font-size: 18px;
+
+        &.title{
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        &.del{
+            align-items: center;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+            background: black;
+            color: white;
+
+            transform: translate(0,-50%) rotate(45deg);
+
+            transition: all ease .2s;
+
+            &:hover{
+                background: white;
+                color: black;
+                transform: translate(0,-50%) rotate(45deg) scale(1.1);
+                cursor: pointer;
+            }
+        }
+    }
+}

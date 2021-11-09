@@ -1,3 +1,5 @@
+import { tasks } from "./task"
+
 const titleInput=document.querySelector('input#title')
 const placeInput=document.querySelector('input#place')
 const timeInput=document.querySelector('input#time')
@@ -9,8 +11,6 @@ let taskElement=document.querySelectorAll('.task')
 let importance=null
 
 const container=document.querySelector('.task-container')
-
-const tasks=[]
 
 //------- EVENTS :
 
@@ -45,7 +45,7 @@ const newTask=()=>{
         date=dateInput.value,
         desc=descInput.value
 
-    if(title&&place&&time&&desc&&importance){
+    if(title&&time&&date&&importance){
         tasks.push(new Task(title,time,date,place,desc,importance))
         resetForm()      
     }
