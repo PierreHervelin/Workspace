@@ -1,5 +1,5 @@
 <template>
-    <div class="acticle-container">
+    <div class="article-container">
         <Article v-for="article in articles" :key="article.id" :article="article"></Article>
     </div>
 </template>
@@ -17,7 +17,7 @@ export default {
         }
     },
     created(){
-        getAllArticle().then(data=>{this.articles=data})
+        getAllArticle(40,1).then(data=>{this.articles=data.data})
     }
 }
 </script>

@@ -1,9 +1,9 @@
 <template>
-    <router-link :to="url">
-        <div class="article">
-            <h2>{{ article.title }}</h2>
-            <p>{{ article.body }}</p>
+    <router-link :to="url" class="article">
+        <div class="img">
+            <img :src="article.image" alt="">
         </div>
+        <h2>{{ article.text }}</h2>
     </router-link>
 </template>
 
